@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Skill(fastapi)"
-    ],
-    "deny": [],
-    "ask": []
-  }
-}
