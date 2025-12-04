@@ -1,0 +1,40 @@
+{
+  "1": {
+    "inputs": {
+      "prompt": [
+        "2",
+        0
+      ],
+      "seed": -1,
+      "aspectRatio": "auto"
+    },
+    "class_type": "RH_Nano_Banana_Image2Image",
+    "_meta": {
+      "title": "RH Nano Banana Image2Image"
+    }
+  },
+  "2": {
+    "inputs": {
+      "prompt": "让小女孩坐在森林里",
+      "seed": 100,
+      "advanced_options": "force_english"
+    },
+    "class_type": "RH_Translator",
+    "_meta": {
+      "title": "Runninghub Translator"
+    }
+  },
+  "3": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "保存图像"
+    }
+  }
+}

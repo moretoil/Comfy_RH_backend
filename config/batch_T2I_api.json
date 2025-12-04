@@ -1,0 +1,205 @@
+{
+  "1": {
+    "inputs": {
+      "unet_name": "梦想融合DreamMeld-多维通用F.1_v1.0.safetensors",
+      "weight_dtype": "fp8_e5m2"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "UNET加载器"
+    }
+  },
+  "3": {
+    "inputs": {
+      "vae_name": "ae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "VAE加载器"
+    }
+  },
+  "4": {
+    "inputs": {
+      "seed": 1041222028969582,
+      "steps": 15,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0,
+      "model": [
+        "61",
+        0
+      ],
+      "positive": [
+        "47",
+        0
+      ],
+      "negative": [
+        "46",
+        0
+      ],
+      "latent_image": [
+        "55",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "K采样器"
+    }
+  },
+  "16": {
+    "inputs": {
+      "samples": [
+        "4",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE解码"
+    }
+  },
+  "46": {
+    "inputs": {
+      "text": "",
+      "clip": [
+        "61",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP文本编码器"
+    }
+  },
+  "47": {
+    "inputs": {
+      "clip_l": [
+        "49",
+        0
+      ],
+      "t5xxl": [
+        "49",
+        0
+      ],
+      "guidance": 3.6,
+      "clip": [
+        "61",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncodeFlux",
+    "_meta": {
+      "title": "CLIP文本编码Flux"
+    }
+  },
+  "49": {
+    "inputs": {
+      "Text": [
+        "66",
+        0
+      ]
+    },
+    "class_type": "DF_Text_Box",
+    "_meta": {
+      "title": "正向提示词"
+    }
+  },
+  "52": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "16",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "保存图像"
+    }
+  },
+  "55": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "空Latent"
+    }
+  },
+  "61": {
+    "inputs": {
+      "lora_name": "Flux Dev模型4步出图lora_.safetensors",
+      "strength_model": 1.0000000000000002,
+      "strength_clip": 1.0000000000000002,
+      "model": [
+        "1",
+        0
+      ],
+      "clip": [
+        "64",
+        0
+      ]
+    },
+    "class_type": "LoraLoader",
+    "_meta": {
+      "title": "LoRA加载器"
+    }
+  },
+  "64": {
+    "inputs": {
+      "clip_name1": "clip_l.safetensors",
+      "clip_name2": "sd3/t5xxl_fp8_e4m3fn.safetensors",
+      "type": "flux"
+    },
+    "class_type": "DualCLIPLoaderGGUF",
+    "_meta": {
+      "title": "DualCLIPLoader (GGUF)"
+    }
+  },
+  "65": {
+    "inputs": {
+      "prompt": "短袖T恤\n篮球鞋",
+      "start_index": 0,
+      "max_rows": 1000
+    },
+    "class_type": "easy promptLine",
+    "_meta": {
+      "title": "提示词行"
+    }
+  },
+  "66": {
+    "inputs": {
+      "ShowText_0": "Short Sleeve T-shirt basketball shoes",
+      "text": [
+        "70",
+        0
+      ]
+    },
+    "class_type": "ShowText",
+    "_meta": {
+      "title": "ShowText"
+    }
+  },
+  "70": {
+    "inputs": {
+      "prompt": [
+        "65",
+        0
+      ],
+      "seed": 334,
+      "advanced_options": "force_english"
+    },
+    "class_type": "RH_Translator",
+    "_meta": {
+      "title": "Runninghub Translator"
+    }
+  }
+}
